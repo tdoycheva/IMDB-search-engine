@@ -1,8 +1,8 @@
 # simple-client-server-app
-## Desption
-Implementation of client-server app which has the functionality of IMDb search engine and uses [OMDb Api](https://www.omdbapi.com/). 
+## Description
+Implementation of console client-server app which has the functionality of IMDb search engine and uses [OMDb Api](https://www.omdbapi.com/). 
 
-The client inserts certain commands in order to find movie data. The server searches in the cache first and then uses the api.
+The client inserts certain commands in order to find movie data. The server searches in the cache on the local machine first and then uses the api to download data.
 
 ## Commands
 
@@ -27,6 +27,18 @@ Returns info for the movies that has passed the filters *genres* and *actors* in
 get-tv-series <name> season=<value>
 ```
 Return info for the episodes of the specified TV series' season.
+
+## Exceptions
+
+There are some custom runtime exceptions:
+
+**UnknownCommandException**
+
+This exception is thrown, if the client enters command which the server doesn't recognize.
+
+**CommandTypoEception**
+
+This exception is thrown, if the command is not used right. For example, the expected fields are mistaken.
 
 ## Reference
 
